@@ -1,0 +1,140 @@
+body {
+  background-color: beige;
+}
+@keyframes cornering {
+  0% {
+    left: 0;
+    top: 0;
+  }
+  25% {
+    left: 0;
+    bottom: 0;
+    top: calc(100% - 100px);
+  }
+  50% {
+    top: calc(100% - 100px);
+    left: calc(100% - 100px);
+  }
+  75% {
+    left: calc(100% - 100px);
+    top: 0;
+  }
+  100% {
+    left: 0;
+    top: 0;
+  }
+}
+.box {
+  z-index: -1;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100px;
+  height: 100px;
+  background-color: pink;
+
+  animation-name: cornering;
+  animation-duration: 24s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+  animation-direction: normal;
+
+  transition-duration: 0.3s;
+}
+.box:hover {
+  transform: scale(0.1);
+  opacity: 0;
+}
+
+.col {
+  color: darkgray;
+  background-color: blue;
+  padding: 5px;
+  text-align: justify;
+  columns: 2;
+}
+textarea {
+  resize: none;
+}
+.box1, .box2 {
+  border: 1px dotted pink;
+  margin-bottom: 20px;
+  width: 300px;
+}
+.box1 {
+  box-sizing: content-box;
+  padding: 20px;
+}
+.box2 {
+  box-sizing: border-box;
+  padding: 20px;
+}
+.frow {
+  display: flex;
+  background-color: pink;
+  color: blue;
+  flex-direction: row;
+  margin: 10px;
+}
+.fcol {
+  flex-basis: 100%;
+  border: 1px dashed blue;
+  margin: 2px;
+}
+.big-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  height: 50px;
+  color: beige;
+  background-color: blue;
+  text-align: center;
+  margin: 0 auto;
+}
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100px;
+  border: 1px dashed blue;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 15px;
+  align-content: /*center/flex-start/flex-end/stretch/space-between/space-around*/
+}
+.column {
+  flex-shrink: 0;
+  display: flex;
+  flex-basis: 33%;
+  text-align: center;
+  background-color: pink;
+  color: blue;
+  border: 1px solid beige;
+  height: 30px;
+}
+.row-c {
+  display: flex;
+  flex-direction: row;
+  border: 1px dashed blue;
+  align-items: flex-start;
+  justify-content: space-evenly; /*flex-start/flex-end/center/space-between/space-around/ */
+  height: 50px;
+}
+.col-child {
+  background-color: black;
+  color: white;
+  border: 1px solid pink;
+  text-align: center;
+}
+.colc1 {
+  height: 50px;
+}
+.colc2 {
+  height: 15px;
+  align-self: center;
+}
+.colc3 {
+  height: 25px;
+  align-self: flex-end;
+}
